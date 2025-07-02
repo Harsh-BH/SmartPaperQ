@@ -116,3 +116,10 @@ We welcome contributions to SmartPaperQ! If you have any ideas, suggestions, or 
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+<<<<<<< HEAD
+=======
+
+## Contact
+
+For any questions or inquiries, please contact us at [email@example.com](mailto:email@example.com).
+>>>>>>> 3bc5255f369d3d778d8c0b3379466e68791b3a6c
