@@ -1,16 +1,25 @@
 #!/bin/bash
 
-# Create required directories if they don't exist
-mkdir -p papers
-mkdir -p papers/arxiv
-mkdir -p vectorstore
+echo "Setting up Paper-shaper..."
 
-# Activate virtual environment if it exists
-if [ -d "venv" ]; then
-  echo "Activating virtual environment..."
-  source venv/bin/activate
+# Ensure script is executable
+chmod +x "$0"
+
+# Check if virtual environment exists
+if [ ! -d "venv" ]; then
+    echo "Creating virtual environment..."
+    python3 -m venv venv
 fi
 
-# Run Streamlit app
-echo "Starting SmartPaperQ..."
-streamlit run app.py "$@"
+# Activate virtual environment
+source venv/bin/activate
+
+# Install requirements and setup NLTK
+python setup.py
+
+# Run the application
+echo "Starting Paper-shaper application..."
+streamlit run app.py
+
+# Deactivate virtual environment when the application closes
+deactivate
